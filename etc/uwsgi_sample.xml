@@ -1,0 +1,8 @@
+<uwsgi>
+  <socket>/tmp/testproject_uwsgi.sock</socket>
+<!-- <http>localhost:8000</http>  -->
+  <chmod-socket>666</chmod-socket>
+  <file>./bin/django_wsgi.py</file>
+  <processes>1</processes>
+  <disable-logging/>
+</uwsgi>

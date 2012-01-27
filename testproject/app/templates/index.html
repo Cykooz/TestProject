@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block extrahead %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}app/css/styles.css" />
+    <script src="{{ STATIC_URL }}app/js/script.js"></script>
+    <script>
+        $(function()
+        {
+            init_models(
+            {
+                get_models_url: '{% url app-get_models %}',
+                get_data_url: '{% url app-get_model_data %}',
+                models: '#modesl',
+                model_data: '#model-data'
+            });
+        });
+    </script>
+
+{% endblock %}
+
+{% block page %}
+    <section id="models"></section>
+    <section id="model-data"></section>
+{% endblock %}
