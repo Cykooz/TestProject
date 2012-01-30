@@ -24,9 +24,8 @@ def create_models_from_config(package):
 
     models = []
 
-    stream = file(YAML_PATH)
-    config = yaml.load(stream)
-    stream.close()
+    with file(YAML_PATH) as stream:
+        config = yaml.load(stream)
 
     for name, properties in config.iteritems():
         model_members = OrderedDict({
